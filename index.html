@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-  
-  
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vega-Lite Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
-  
-<div id="scatter_plot"></div>
+    <h1>Week 10 HW: World Happiness</h1>
+    <div id="chart1"></div>
+    <div id="chart2"></div>
 
-<script type="text/javascript">
+    <script type="text/javascript">
+        var vg_1 = "js/bubble_plot.vg.json";
+        var vg_2 = "js/scatter_plot.vg.json";
 
-  var spec2 = "js/scatter_plot_interactive.vg.json";
-  vegaEmbed('#scatter_plot', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+        vegaEmbed('#chart1', vg_1).then(function(result) {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
 
+        vegaEmbed('#chart2', vg_2).then(function(result) {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
+    </script>
 </body>
 </html>
